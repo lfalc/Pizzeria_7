@@ -6,8 +6,10 @@ class Mozzarella :
     public PizzaDecorator
 {
 public:
-    using PizzaDecorator::PizzaDecorator;
-
+    Mozzarella(Pizza* pizza) {
+        this->pizza = pizza;
+    }
+    
     double getCost() {
         return pizza->getCost() + 2.00;
     }

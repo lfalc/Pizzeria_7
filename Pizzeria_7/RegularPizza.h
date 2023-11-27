@@ -3,19 +3,17 @@
 #include "Pizza.h"
 using namespace std;
 
-
-class RegularPizza :
-    public Pizza
+class RegularPizza : public Pizza
 {
-    RegularPizza() {
+    using Pizza::Pizza;
+
+    double getCost()
+    {
+        return 5.00;
     }
 
-    double getCost() {
-        return 5.00 + pizza->getCost();
+    string getDescription()
+    {
+        return "Pizzabrot";
     }
-
-    string getDescription() {
-        return "Pizzabrot " + pizza->getDescription();
-    }
-
 };

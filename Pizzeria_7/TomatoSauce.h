@@ -1,17 +1,19 @@
-#pragma once
 #include "PizzaDecorator.h"
 
-class TomatoSauce :
-    public PizzaDecorator
+class TomatoSauce : public PizzaDecorator
 {
 public:
-    using PizzaDecorator::PizzaDecorator;
-
-    double getCost() {
+    TomatoSauce(Pizza *pizza)
+    {
+        this->pizza = pizza;
+    }
+    double getCost()
+    {
         return pizza->getCost() + 1.00;
     }
 
-    string getDescription() {
+    string getDescription()
+    {
         return pizza->getDescription() + ", Tomatosauce";
     }
 };

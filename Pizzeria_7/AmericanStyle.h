@@ -1,18 +1,17 @@
 #pragma once
 #include "Pizza.h"
 
-class AmericanStyle :
-    public Pizza
+class AmericanStyle : public Pizza
 {
-    AmericanStyle() {
+    using Pizza::Pizza;
+
+    double getCost()
+    {
+        return 6.00;
     }
 
-    double getCost() {
-        return 6.00 + pizza->getCost();
+    string getDescription()
+    {
+        return "Dicker Teig mit Kaeserand und";
     }
-
-    string getDescription() {
-        return "Dicker Teig mit Kaeserand und" + pizza->getDescription();
-    }
-
 };

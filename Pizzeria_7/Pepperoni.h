@@ -6,8 +6,10 @@ class Pepperoni :
     public PizzaDecorator
 {
 public:
-    using PizzaDecorator::PizzaDecorator;
-
+    Pepperoni(Pizza* pizza) {
+        this->pizza = pizza;
+    }
+    
     double getCost() {
         return pizza->getCost() + 2.00;
     }

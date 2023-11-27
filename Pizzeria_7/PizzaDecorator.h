@@ -1,5 +1,7 @@
-#pragma once
 #include "Pizza.h"
+
+#ifndef PIZZADECORATOR_H
+#define PIZZADECORATOR_H
 
 class PizzaDecorator :
     public Pizza
@@ -20,14 +22,23 @@ public:
         if (pizza != NULL){
             return pizza->getCost();
         }
+        else {
+            return 0.0;
+        }
     }
 
     string getDescription() {
-        return pizza->getDescription();
+        if (pizza != NULL) {
+            return pizza->getDescription();
+        }
+        else {
+            return ".";
+        }
     }
 
     ~PizzaDecorator() {
         delete pizza;
     }
-
 };
+
+#endif // !PIZZADECORATOR_H
